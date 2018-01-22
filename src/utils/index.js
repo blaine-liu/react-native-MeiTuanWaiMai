@@ -1,6 +1,8 @@
 /**
  * Created by Administrator on 2018/1/18.
  */
+import { Dimensions } from 'react-native';
+
 const groupArray = (data, cols) => {
   const list = [];
   let current = [];
@@ -21,6 +23,12 @@ const groupArray = (data, cols) => {
   return list;
 };
 
+const calCellWidth = (padding = 24, cols = 2) => {
+  if (cols <= 0) throw new Error('Argument cols should great then 0');
+  return (Dimensions.get('window').width - padding) / cols;
+};
+
 module.exports = {
   groupArray,
+  calCellWidth,
 };

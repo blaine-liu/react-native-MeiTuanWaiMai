@@ -15,9 +15,9 @@ class Location extends PureComponent {
           style={styles.icon}
         />
         <Text style={styles.text}>勘泰大厦</Text>
-          <View style={styles.iconContainer}>
-              <Icon name={'ios-arrow-forward-outline'} size={16} />
-          </View>
+        <View style={styles.iconContainer}>
+          <Icon name={'ios-arrow-forward-outline'} size={16} />
+        </View>
       </View>
     );
   }
@@ -37,10 +37,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#4B3E3D',
   },
-    iconContainer: {
-      marginLeft: 8,
-        alignSelf: 'center'
-  }
+  iconContainer: {
+    marginLeft: 8,
+    alignSelf: 'center',
+  },
 });
 
 Location.props = {

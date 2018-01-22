@@ -1,10 +1,6 @@
 /**
  * Created by Administrator on 2018/1/19.
- * 特色项
- */
-
-/**
- * Created by Administrator on 2018/1/18.
+ * 优惠专区-特色项
  */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';

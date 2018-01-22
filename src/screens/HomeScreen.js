@@ -5,10 +5,15 @@ import React, { Component } from 'react';
 import { View, Text, StatusBar, StyleSheet, SectionList } from 'react-native';
 
 import { CollapsibleHeader, Banner, FriendFeeds } from './../components';
-import { CategorySection, CardSection } from './sections';
+import {
+  CategorySection,
+  CardSection,
+  RecommendSection,
+  NearbySection,
+} from './sections';
 import colors from './../styles/colors';
 
-import { headerData } from './../../mock';
+import { headerData, recommendData, nearbyData } from './../../mock';
 
 export default class HomeScreen extends Component {
   render() {
@@ -76,6 +81,33 @@ export default class HomeScreen extends Component {
                 },
               ],
             },
+            {
+              renderItem: () => {
+                return (
+                  <RecommendSection
+                    data={recommendData}
+                    style={{ marginTop: 27 }}
+                  />
+                );
+              },
+              data: [
+                {
+                  key: 'section-recommend',
+                },
+              ],
+            },
+            {
+              renderItem: () => {
+                return (
+                  <NearbySection data={nearbyData} style={{ marginTop: 27 }} />
+                );
+              },
+              data: [
+                {
+                  key: 'section-nearby',
+                },
+              ],
+            },
           ]}
         />
       </View>
@@ -86,7 +118,6 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: 24,
   },
   contentSection: {
     paddingLeft: 12,

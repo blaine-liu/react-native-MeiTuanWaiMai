@@ -10,3 +10,7 @@ export { default as CardItem } from './CardItem';
 export { default as BrandBlockItem } from './BrandBlockItem';
 export { default as BlockItem } from './BlockItem';
 export { default as TouchableIcon } from './Icon';
+export { default as RecommendItem } from './RecommendItem';
+export { default as ThemeItem } from './ThemeItem';
+export { default as GoodsItem } from './GoodsItem';
+export { default as StaticTag } from './StaticTag';

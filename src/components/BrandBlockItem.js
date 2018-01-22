@@ -1,5 +1,6 @@
 /**
  * Created by Administrator on 2018/1/18.
+ * 优惠专区-品牌
  */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
@@ -11,6 +12,8 @@ import {
   StyleSheet,
   Dimensions,
 } from 'react-native';
+
+import { calCellWidth } from './../utils';
 
 class BrandBlockItem extends PureComponent {
   render() {
@@ -33,16 +36,14 @@ class BrandBlockItem extends PureComponent {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     paddingVertical: 5,
   },
   brandImage: {
-    width: (Dimensions.get('window').width - 32) / 2,
+    width: calCellWidth(32, 2),
     height: 106,
   },
   intro: {
