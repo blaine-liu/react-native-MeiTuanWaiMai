@@ -19,11 +19,12 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor={colors.primaryColor} />
+        <StatusBar backgroundColor={colors.primaryColor} barStyle={'dark-content'} />
         <CollapsibleHeader />
 
         <SectionList
           style={styles.contentSection}
+          initialNumToRender={3}
           sections={[
             {
               renderItem: () => {
