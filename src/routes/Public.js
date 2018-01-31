@@ -105,6 +105,7 @@ const PublicNavigator = StackNavigator({
     screen: CategoryScreen,
     navigationOptions: () => ({
       title: 'Category',
+      header: null,
     }),
   },
   BrowserScreen: {

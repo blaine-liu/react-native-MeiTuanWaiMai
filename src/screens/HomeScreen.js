@@ -2,7 +2,7 @@
  * Created by Administrator on 2018/1/17.
  */
 import React, { Component } from 'react';
-import { View, Text, StatusBar, StyleSheet, SectionList } from 'react-native';
+import { View, Text, StyleSheet, SectionList, Animated } from 'react-native';
 
 import { CollapsibleHeader, Banner, FriendFeeds } from './../components';
 import {
@@ -11,20 +11,28 @@ import {
   RecommendSection,
   NearbySection,
 } from './sections';
-import colors from './../styles/colors';
 
 import { headerData, recommendData, nearbyData } from './../../mock';
 
 export default class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      scrollY: new Animated.Value(0),
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar backgroundColor={colors.primaryColor} barStyle={'dark-content'} />
-        <CollapsibleHeader />
+        <CollapsibleHeader offsetY={this.state.scrollY} />
 
         <SectionList
           style={styles.contentSection}
           initialNumToRender={3}
+          onScroll={Animated.event([
+            { nativeEvent: { contentOffset: { y: this.state.scrollY } } },
+          ])}
           sections={[
             {
               renderItem: () => {

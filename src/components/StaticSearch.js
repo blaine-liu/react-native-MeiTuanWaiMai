@@ -2,20 +2,26 @@
  * Created by Administrator on 2018/1/17.
  */
 import React, { PureComponent } from 'react';
-import { StyleSheet, Dimensions, Image, View, Text } from 'react-native';
-
-const { width } = Dimensions.get('window');
+import PropTypes from 'prop-types';
+import {
+  StyleSheet,
+  Dimensions,
+  Image,
+  View,
+  Text,
+  Animated,
+} from 'react-native';
 
 class StaticSearch extends PureComponent {
   render() {
     return (
-      <View style={styles.container}>
+      <Animated.View style={[styles.container, this.props.containerStyle]}>
         <Image
           source={require('../assets/tool/search.png')}
           style={styles.icon}
         />
         <Text style={styles.text}>奶茶</Text>
-      </View>
+      </Animated.View>
     );
   }
 }
@@ -27,6 +33,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 3,
+    borderWidth: 1,
+    borderColor: '#fff',
   },
   icon: {
     margin: 5,
@@ -37,5 +45,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+StaticSearch.props = {
+  containerStyle: PropTypes.any,
+};
 
 export default StaticSearch;

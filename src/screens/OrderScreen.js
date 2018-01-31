@@ -2,13 +2,16 @@
  * Created by Administrator on 2018/1/17.
  */
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
 export default class OrderScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View>
-        <Text>Home</Text>
+        <Text>Order</Text>
       </View>
     );
   }
