@@ -14,3 +14,5 @@ export { default as RecommendItem } from './RecommendItem';
 export { default as ThemeItem } from './ThemeItem';
 export { default as GoodsItem } from './GoodsItem';
 export { default as StaticTag } from './StaticTag';
+export { default as Icon } from './Icon';
+export { default as Share } from './Share';

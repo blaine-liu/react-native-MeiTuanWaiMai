@@ -9,11 +9,18 @@ const TouchableIcon = ({
   opacity = 0.8,
   onPress,
   name,
-  color = '#4F8EF7',
+  color = '#666',
   size = 24,
+  position = 'left',
 }) => {
+  const container = {
+      width: 48,
+      height: 48,
+      justifyContent: 'center',
+      alignItems: position === 'left' ? 'flex-start' : 'flex-end'
+  };
   return (
-    <TouchableOpacity onPress={onPress} opacity={opacity}>
+    <TouchableOpacity onPress={onPress} opacity={opacity} style={container}>
       <Icon name={name} size={size} color={color} />
     </TouchableOpacity>
   );

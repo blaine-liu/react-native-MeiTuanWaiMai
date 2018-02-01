@@ -2,7 +2,8 @@
  * Created by Administrator on 2018/1/9.
  */
 import React from 'react';
-import { StackNavigator, TabNavigator, Image } from 'react-navigation';
+import { StatusBar, View } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import {
   HomeScreen,
@@ -12,7 +13,7 @@ import {
   BrowserScreen,
 } from './../screens';
 
-import { TabBarIcon } from './../components';
+import { TabBarIcon, Icon, Share } from './../components';
 import colors from './../styles/colors';
 
 const HomeIcon = ({ focused }) => {
@@ -43,6 +44,12 @@ const MineIcon = ({ focused }) => {
       inactiveImg={require('../assets/tabbar/user_inactive.png')}
     />
   );
+};
+
+const LeftIcon = ({ onPress }) => {
+    return (
+        <Icon onPress={onPress} name='ios-arrow-back-outline' />
+    );
 };
 
 const MainTabNavigator = TabNavigator(
@@ -111,7 +118,17 @@ const PublicNavigator = StackNavigator({
   BrowserScreen: {
     screen: BrowserScreen,
     navigationOptions: ({ navigation }) => ({
-      title: `${navigation.state.params.title}`,
+      title: '美食',
+      headerLeft: LeftIcon,
+      headerRight: <Share />,
+      headerStyle: {
+          paddingHorizontal: 12
+      },
+      headerTitleStyle: {
+          alignSelf: 'center',
+          fontWeight: 'normal',
+          fontSize: 14,
+      }
     }),
   },
 });
