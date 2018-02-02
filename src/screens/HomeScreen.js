@@ -36,12 +36,7 @@ export default class HomeScreen extends Component {
           sections={[
             {
               renderItem: () => {
-                return (
-                  <Banner
-                    list={headerData.top_banner_list}
-                    navigation={this.props.navigation}
-                  />
-                );
+                return <Banner list={headerData.top_banner_list} />;
               },
               data: [
                 {

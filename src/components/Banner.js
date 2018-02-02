@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withNavigation } from 'react-navigation';
 const Swiper = require('react-native-swiper');
 import {
   View,
@@ -17,7 +18,7 @@ import colors from './../styles/colors';
 class Banner extends Component {
   gotoBrowserScreen = banner => {
     const { navigate } = this.props.navigation;
-    navigate('BrowserScreen', { title: 'Banner', ...banner });
+    navigate('BrowserScreen', { title: '美食', ...banner });
   };
 
   render() {
@@ -107,4 +108,4 @@ Banner.defaultProps = {
   list: [],
 };
 
-export default Banner;
+export default withNavigation(Banner);

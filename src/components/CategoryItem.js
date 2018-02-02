@@ -16,13 +16,13 @@ import colors from './../styles/colors';
 class CategoryItem extends PureComponent {
   render() {
     const {
-      img,   // 图片
-      text,  // 一级文本
+      img, // 图片
+      text, // 一级文本
       onPress,
       columnsNum, // 列数
-      iconStyle,  // 图片样式
+      iconStyle, // 图片样式
       paddingHorizontal, // 水平内边距，由于view的宽度是用Dimensions计算的，需要手工指定父级的内边距，否则可能出现计算偏差
-      remark  // 次级文本
+      remark, // 次级文本
     } = this.props;
     return (
       <TouchableOpacity
@@ -38,9 +38,7 @@ class CategoryItem extends PureComponent {
       >
         <Image style={[styles.icon, iconStyle]} source={img} />
         <Text style={styles.text}>{text}</Text>
-          {
-              remark && <Text style={styles.minorText}>{remark}</Text>
-          }
+        {remark && <Text style={styles.minorText}>{remark}</Text>}
       </TouchableOpacity>
     );
   }
@@ -63,8 +61,8 @@ const styles = StyleSheet.create({
   },
   minorText: {
     fontSize: 8,
-    color: colors.textColor.minor
-  }
+    color: colors.textColor.minor,
+  },
 });
 
 CategoryItem.props = {

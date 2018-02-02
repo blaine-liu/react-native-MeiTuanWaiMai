@@ -2,6 +2,7 @@
  * Created by Administrator on 2018/1/22.
  */
 import React, { PureComponent } from 'react';
+import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import {
   View,
@@ -16,17 +17,26 @@ import { calCellWidth } from './../utils';
 import colors from './../styles/colors';
 
 class RecommendItem extends PureComponent {
+  gotoBrowserScreen = () => {
+    const { data } = this.props;
+    const { navigate } = this.props.navigation;
+    navigate('BrowserScreen', { title: data.title, h5_url: data.click_url });
+  };
   render() {
     const { data } = this.props;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        opacity={0.9}
+        onPress={this.gotoBrowserScreen}
+      >
         <Image style={styles.productImage} source={{ uri: data.product_pic }} />
         <Image style={styles.thumb} source={{ uri: data.pic }} />
         <Text style={styles.title} numberOfLines={1}>
           {data.title}
         </Text>
         <Text style={styles.label}>{data.label}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -70,4 +80,4 @@ RecommendItem.props = {
   data: PropTypes.object,
 };
 
-export default RecommendItem;
+export default withNavigation(RecommendItem);

@@ -3,6 +3,7 @@
  * 优惠专区-特色项
  */
 import React, { PureComponent } from 'react';
+import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import {
   View,
@@ -16,10 +17,23 @@ import {
 import colors from './../styles/colors';
 
 class BlockItem extends PureComponent {
+  gotoBrowserScreen = () => {
+    const { data } = this.props;
+    const { navigate } = this.props.navigation;
+    navigate('BrowserScreen', {
+      title: data.sub_title,
+      h5_url: data.click_url,
+    });
+  };
+
   render() {
     const { data } = this.props;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        opacity={0.9}
+        onPress={this.gotoBrowserScreen}
+      >
         <View style={styles.infoContainer}>
           <Text style={styles.title}>{data.title}</Text>
           <Text style={styles.subTitle}>{data.sub_title}</Text>
@@ -31,7 +45,7 @@ class BlockItem extends PureComponent {
             source={{ uri: data.pic_url }}
           />
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -70,4 +84,4 @@ BlockItem.props = {
   data: PropTypes.object,
 };
 
-export default BlockItem;
+export default withNavigation(BlockItem);

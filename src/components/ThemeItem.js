@@ -3,6 +3,7 @@
  * 精选
  */
 import React, { PureComponent } from 'react';
+import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import {
   View,
@@ -17,16 +18,25 @@ import { calCellWidth } from './../utils';
 import colors from './../styles/colors';
 
 class ThemeItem extends PureComponent {
+  gotoBrowserScreen = () => {
+    const { data } = this.props;
+    const { navigate } = this.props.navigation;
+    navigate('BrowserScreen', { title: data.label, h5_url: data.click_url });
+  };
   render() {
     const { data } = this.props;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        opacity={0.9}
+        onPress={this.gotoBrowserScreen}
+      >
         <Image style={styles.image} source={{ uri: data.pic }} />
         <View style={styles.frontContainer}>
           <Text style={styles.title}>{data.title}</Text>
           <Text style={styles.label}>{data.label}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -66,4 +76,4 @@ ThemeItem.props = {
   data: PropTypes.object,
 };
 
-export default ThemeItem;
+export default withNavigation(ThemeItem);

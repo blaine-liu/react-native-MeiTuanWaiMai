@@ -3,6 +3,7 @@
  * 优惠专区-品牌
  */
 import React, { PureComponent } from 'react';
+import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import {
   View,
@@ -16,10 +17,20 @@ import {
 import { calCellWidth } from './../utils';
 
 class BrandBlockItem extends PureComponent {
+  gotoBrowserScreen = () => {
+    const { data } = this.props;
+    const { navigate } = this.props.navigation;
+    navigate('BrowserScreen', { title: data.title, h5_url: data.click_url });
+  };
+
   render() {
     const { data } = this.props;
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={this.gotoBrowserScreen}
+        opacity={0.9}
+      >
         <Image style={styles.brandImage} source={{ uri: data.pic_url }} />
         <View style={styles.intro}>
           <View style={styles.titleContainer}>
@@ -32,7 +43,7 @@ class BrandBlockItem extends PureComponent {
           resizeMode={Image.resizeMode.contain}
           source={{ uri: data.label_pic }}
         />
-      </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -78,4 +89,4 @@ BrandBlockItem.props = {
   data: PropTypes.object,
 };
 
-export default BrandBlockItem;
+export default withNavigation(BrandBlockItem);

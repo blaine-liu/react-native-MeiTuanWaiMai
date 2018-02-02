@@ -116,7 +116,7 @@ const PublicNavigator = StackNavigator({
   BrowserScreen: {
     screen: BrowserScreen,
     navigationOptions: ({ navigation }) => ({
-      title: '美食',
+      title: `${navigation.state.params.title}`,
       headerLeft: LeftIcon,
       headerRight: <Share />,
       headerStyle: {
