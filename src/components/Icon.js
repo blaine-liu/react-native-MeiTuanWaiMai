@@ -12,6 +12,7 @@ const TouchableIcon = ({
   color = '#666',
   size = 24,
   position = 'left',
+  style = {},
 }) => {
   const container = {
     width: 48,
@@ -20,7 +21,11 @@ const TouchableIcon = ({
     alignItems: position === 'left' ? 'flex-start' : 'flex-end',
   };
   return (
-    <TouchableOpacity onPress={onPress} opacity={opacity} style={container}>
+    <TouchableOpacity
+      onPress={onPress}
+      opacity={opacity}
+      style={[container, style]}
+    >
       <Icon name={name} size={size} color={color} />
     </TouchableOpacity>
   );

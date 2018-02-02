@@ -4,11 +4,16 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 
+import { MineHeaderSection, MineProfileSection, MineAssetSection, MineRecommendSection } from './sections';
+
 export default class MineScreen extends Component {
   render() {
     return (
       <View>
-        <Text>Home</Text>
+        <MineHeaderSection />
+        <MineProfileSection />
+        <MineAssetSection />
+        <MineRecommendSection />
       </View>
     );
   }
