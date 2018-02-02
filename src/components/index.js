@@ -16,3 +16,6 @@ export { default as GoodsItem } from './GoodsItem';
 export { default as StaticTag } from './StaticTag';
 export { default as Icon } from './Icon';
 export { default as Share } from './Share';
+export { default as OrderItem } from './OrderItem';
+export { default as WithoutOrder } from './WithoutOrder';
+export { default as Button } from './Button';

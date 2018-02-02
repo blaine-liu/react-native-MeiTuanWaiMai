@@ -127,6 +127,7 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   contentSection: {
     paddingLeft: 12,

@@ -47,9 +47,7 @@ const MineIcon = ({ focused }) => {
 };
 
 const LeftIcon = ({ onPress }) => {
-    return (
-        <Icon onPress={onPress} name='ios-arrow-back-outline' />
-    );
+  return <Icon onPress={onPress} name="ios-arrow-back-outline" />;
 };
 
 const MainTabNavigator = TabNavigator(
@@ -122,13 +120,13 @@ const PublicNavigator = StackNavigator({
       headerLeft: LeftIcon,
       headerRight: <Share />,
       headerStyle: {
-          paddingHorizontal: 12
+        paddingHorizontal: 12,
       },
       headerTitleStyle: {
-          alignSelf: 'center',
-          fontWeight: 'normal',
-          fontSize: 14,
-      }
+        alignSelf: 'center',
+        fontWeight: 'normal',
+        fontSize: 14,
+      },
     }),
   },
 });

@@ -14,10 +14,10 @@ const TouchableIcon = ({
   position = 'left',
 }) => {
   const container = {
-      width: 48,
-      height: 48,
-      justifyContent: 'center',
-      alignItems: position === 'left' ? 'flex-start' : 'flex-end'
+    width: 48,
+    height: 48,
+    justifyContent: 'center',
+    alignItems: position === 'left' ? 'flex-start' : 'flex-end',
   };
   return (
     <TouchableOpacity onPress={onPress} opacity={opacity} style={container}>
