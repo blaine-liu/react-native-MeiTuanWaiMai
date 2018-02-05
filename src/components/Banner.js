@@ -16,6 +16,20 @@ import {
 import colors from './../styles/colors';
 
 class Banner extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            swiperShow:false,
+        };
+    }
+    componentDidMount(){
+        setTimeout(()=>{
+            this.setState({
+                swiperShow:true
+            });
+        },150)
+    }
+
   gotoBrowserScreen = banner => {
     const { navigate } = this.props.navigation;
     navigate('BrowserScreen', { title: '美食', ...banner });
@@ -25,13 +39,15 @@ class Banner extends Component {
     const { list } = this.props;
     return (
       <View style={styles.container}>
-        <Swiper
-          autoPlay
-          index={Math.floor(list.length / 2)}
-          paginationStyle={{
+          {
+              this.state.swiperShow &&
+              <Swiper
+                  autoPlay
+                  index={Math.floor(list.length / 2)}
+                  paginationStyle={{
             bottom: 8,
           }}
-          dot={
+                  dot={
             <View
               style={{
                 backgroundColor: 'rgba(255,255,255,.3)',
@@ -43,7 +59,7 @@ class Banner extends Component {
               }}
             />
           }
-          activeDot={
+                  activeDot={
             <View
               style={{
                 backgroundColor: colors.primaryColor,
@@ -55,29 +71,30 @@ class Banner extends Component {
               }}
             />
           }
-        >
-          {list &&
-            list.map(banner => {
-              return (
-                <View
-                  key={`banner-${banner.banner_act_id}`}
-                  style={styles.banner}
-                >
-                  <TouchableOpacity
-                    style={styles.banner}
-                    activeOpacity={0.8}
-                    onPress={() => this.gotoBrowserScreen(banner)}
-                  >
-                    <Image
-                      style={styles.image}
-                      source={{ uri: banner.banner_pic_url }}
-                      resizeMode={Image.resizeMode.contain}
-                    />
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-        </Swiper>
+              >
+                  {list &&
+                  list.map(banner => {
+                      return (
+                          <View
+                              key={`banner-${banner.banner_act_id}`}
+                              style={styles.banner}
+                          >
+                              <TouchableOpacity
+                                  style={styles.banner}
+                                  activeOpacity={0.8}
+                                  onPress={() => this.gotoBrowserScreen(banner)}
+                              >
+                                  <Image
+                                      style={styles.image}
+                                      source={{ uri: banner.banner_pic_url }}
+                                      resizeMode={Image.resizeMode.contain}
+                                  />
+                              </TouchableOpacity>
+                          </View>
+                      );
+                  })}
+              </Swiper>
+          }
       </View>
     );
   }

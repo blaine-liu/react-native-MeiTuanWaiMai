@@ -5,7 +5,7 @@
 *Mock数据采取非正常手段获取，请不要在其他地方使用*
 
 # 运行截图
-![Alt home](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/home.png)
+![Alt home](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/home.jpg)
 
 
 # 安装
