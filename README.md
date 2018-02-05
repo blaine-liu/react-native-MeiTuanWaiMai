@@ -15,6 +15,16 @@
 <img src="https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/mine.jpg" height="360" />
 <img src="https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/share.jpg" height="360" />
 </div>
+
+# 待完善界面
+
+- 搜索
+- 定位
+- 商家
+- 分类
+- Mock Server
+- ...
+
 # 安装
 
     npm install
