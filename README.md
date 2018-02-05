@@ -5,9 +5,13 @@
 *Mock数据采取非正常手段获取，请不要在其他地方使用*
 
 # 运行截图
-![Alt home](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/home.jpg)
-
-
+![Alt 首页](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/home.jpg)
+![Alt 订单](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/orders.jpg)
+![Alt 订单待评价](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/order_eval.jpg)
+![Alt 订单待退款](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/order_refund.jpg)
+![Alt 我的](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/mine.jpg)
+![Alt 我的](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/mine.jpg)
+![Alt 分享](https://github.com/mldhnrtree/react-native-MeiTuanWaiMai/raw/master/screenshots/share.jpg)
 # 安装
 
     npm install
